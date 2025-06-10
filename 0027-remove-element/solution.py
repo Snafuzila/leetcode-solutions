@@ -1,10 +1,8 @@
-class Solution(object):
+class Solution:
     def removeElement(self, nums, val):
-        k = 0  # Pointer for the next position
+        k = 0
         for i in range(len(nums)):
             if nums[i] != val:
                 nums[k] = nums[i]
                 k += 1
-        return k  # Returns new length
-
-        
+        return k
