@@ -3,7 +3,7 @@ name: Sync LeetCode
 on:
   workflow_dispatch: # Allows you to trigger it manually anytime
   schedule:
-    - cron: "0 2 * * *" # Runs automatically once a day (2:00 AM) mm hh DD MM dayofweek
+    - cron: "0 23 * * *" # Runs automatically once a day (2:00 AM) mm hh DD MM dayofweek
 
 jobs:
   build:
