@@ -1,9 +1,9 @@
 name: Sync LeetCode
 
 on:
-  workflow_dispatch: # Allows you to trigger it manually anytime
+  workflow_dispatch:
   schedule:
-    - cron: "0 23 * * *" # Runs automatically once a day
+    - cron: "0 23 * * *"
 
 jobs:
   build:
@@ -11,10 +11,8 @@ jobs:
 
     steps:
       - name: Sync LeetCode Submissions
-        uses: alvations/leetcode-sync@master # Or another active fork containing the null safety fix
+        uses: dos-m0nk3y/LeetCode-Synchronizer@v1.1.0
         with:
-          github-token: ${{ github.token }}
-          leetcode-csrf-token: ${{ secrets.LEETCODE_CSRF_TOKEN }}
-          leetcode-session: ${{ secrets.LEETCODE_SESSION }}
-          verbose: true
-          commit-header: "[LeetCode Sync]"
+          GITHUB_TOKEN: ${{ github.token }}
+          LEETCODE_SESSION: ${{ secrets.LEETCODE_SESSION }}
+          LEETCODE_CSRF_TOKEN: ${{ secrets.LEETCODE_CSRF_TOKEN }}
